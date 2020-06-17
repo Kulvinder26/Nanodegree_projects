@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>WordClouds</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <style>
+
+        figcaption {
+ 
+float: center;
+  width: 110%;
+  text-align: center;
+  font-style: bold;
+  font-size: large;
+  text-indent: 0;
+font-family: 'Optima';
+  margin: 0.5em;
+  padding: 0.2em;
+}
+
+
+        #paragraph {
+ 
+float: center;
+  width: 110%;
+  text-align: center;
+  font-style: normal;
+  font-size: large;
+  text-indent: 0;
+font-family:  'Open Sans';
+  margin: 0.5em;
+  padding: 0.2em;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Disaster Response Project</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="https://www.udacity.com/">Made with Udacity</a></li>
+                <li><a href="https://github.com/Kulvinder26">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="text-center">Disaster Response Project</h1>
+        <p class="col-sm-5" id = paragraph>
+
+        WordClouds are filled with lots of words in different sizes, which represent the frequency or the importance of each word.
+        <br>
+        Below, we can see which words are most frequently used for each class of messages.
+        </p>
+        <hr />
+      
+      
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+
+                <figure>
+                    <img src= "{{url_for('static', filename='Related.jpg')}}" alt='missing' style="width:350px;height:200px;" />
+                    <figcaption>Related</figcaption>
+                </figure>
+            </div>
+
+            <div class="col-sm-4">
+                
+                <figure>
+                    <img src="{{url_for('static', filename='Request.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Request</figcaption>
+                </figure>
+            </div>
+            
+
+            <div class="col-sm-4">
+                <figure>
+
+                    <img src="{{url_for('static', filename='Offer.jpg')}}" alt='missing' style="width:350px;height:200px;" />
+                    <figcaption>Offer</figcaption>
+                </figure>
+
+
+         </div>
+        </div>
+
+        <div class="row">
+  <div class="col-sm-4">
+            
+                <figure>
+                    <img src="{{url_for('static', filename='Aid_related.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Aid Related</figcaption>
+                </figure>
+                </div>
+
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Medical_help.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Medical Help</figcaption>
+                </figure>
+
+                </div>
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Medical_products.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Medical Products</figcaption>
+                </figure>
+
+        </div>
+        </div>
+
+<div class="row">
+  <div class="col-sm-4">
+
+                <figure>
+                    <img src="{{url_for('static', filename='Search_and_rescue.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Search And Rescue</figcaption>
+                </figure>
+                </div>
+<div class="col-sm-4">
+  
+                <figure>
+                    <img src="{{url_for('static', filename='Security.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Security</figcaption>
+                </figure>
+                </div>
+    <div class="col-sm-4">
+  
+                <figure>
+                    <img src="{{url_for('static', filename='Military.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Military</figcaption>
+                </figure>
+                </div>
+    </div>
+
+
+    <div class="row">
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Water.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Water</figcaption>
+                </figure>
+                </div>
+     <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Shelter.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Shelter</figcaption>
+                </figure>
+                </div>
+
+     <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Clothing.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Clothing</figcaption>
+                </figure>
+                </div>
+            </div>
+
+
+ <div class="row">
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Money.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Money</figcaption>
+                </figure>
+                </div>
+
+
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Missing_people.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Missing People</figcaption>
+                </figure>
+            </div>
+
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Refugees.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Refugees</figcaption>
+                </figure>
+            </div>
+    </div>
+
+            
+ <div class="row">
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Death.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Death</figcaption>
+                </figure>
+                </div>
+
+
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Other_aid.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Other Aid</figcaption>
+                </figure>
+            </div>
+
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Infrastructure_related.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Infrastructure Related</figcaption>
+                </figure>
+            </div>
+    </div>
+           
+ <div class="row">
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Transport.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Transport</figcaption>
+                </figure>
+                </div>
+
+
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Buildings.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Buildings</figcaption>
+                </figure>
+            </div>
+
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Electricity.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Electricity</figcaption>
+                </figure>
+            </div>
+    </div>
+           
+
+ <div class="row">
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Tools.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Tools</figcaption>
+                </figure>
+                </div>
+
+
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Hospitals.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Hospitals</figcaption>
+                </figure>
+            </div>
+
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Shops.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Shops</figcaption>
+                </figure>
+            </div>
+    </div>
+           
+ <div class="row">
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Aid_centers.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Aid Centers</figcaption>
+                </figure>
+                </div>
+
+
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Other_infrastructure.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Other Infrastructure</figcaption>
+                </figure>
+            </div>
+
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Weather_related.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Weather Related</figcaption>
+                </figure>
+            </div>
+    </div>
+
+
+ <div class="row">
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Floods.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Floods</figcaption>
+                </figure>
+                </div>
+
+
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Storm.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Storm</figcaption>
+                </figure>
+            </div>
+
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Fire.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Fire</figcaption>
+                </figure>
+            </div>
+    </div>
+
+
+ <div class="row">
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Earthquake.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Earthquake</figcaption>
+                </figure>
+                </div>
+
+
+  <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Cold.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Cold</figcaption>
+                </figure>
+            </div>
+
+    <div class="col-sm-4">
+                <figure>
+                    <img src="{{url_for('static', filename='Other_weather.jpg')}}" alt='missing' style="width:350px;height:200px;"/>
+                    <figcaption>Other Weather</figcaption>
+                </figure>
+            </div>
+    </div>
+
+        
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
