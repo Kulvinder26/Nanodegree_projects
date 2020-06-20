@@ -1,4 +1,10 @@
 # import libraries
+
+
+import sys
+sys.path.append("..")
+
+
 import pandas as pd
 from sqlalchemy import create_engine
 from sklearn.pipeline import Pipeline
@@ -25,6 +31,7 @@ from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
+from utils.util import tokenize
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
@@ -46,20 +53,6 @@ def load_data(database_filepath):
     
     return X,Y,cols
 
-def tokenize(text):
-    
-    stop_words = stopwords.words("english")
-    lemmatizer = WordNetLemmatizer()
-    text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower())
-    
-    # tokenize text
-    tokens = word_tokenize(text)
-    
-    # lemmatize andremove stop words
-    tokens = [lemmatizer.lemmatize(word) for word in tokens if word not in stop_words]
-
-    return tokens
-    
 
 
 def build_model():
