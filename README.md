@@ -14,3 +14,7 @@ The web app will also display visualizations of the data.
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
+
+
+
+You can find the running app here : https://disaster-response-dash.herokuapp.com
